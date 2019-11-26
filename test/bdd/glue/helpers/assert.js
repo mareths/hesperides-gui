@@ -59,3 +59,10 @@ exports.fileContains = async function (filePath, content) {
         await expect(fs.promises.readFile(filePath, { encoding: 'utf8' })).to.eventually.be.equal(content);
     });
 };
+
+exports.checkElementDisplayed = async function (elem) {
+    const elements = get.elementsByCss(elem);
+    // console.log('elements : ', elements);
+    console.log('element.isdisplayed : ', elements.isDisplayed);
+    await expect(elements.isDisplayed()).to.eventually.equal(true);
+};
