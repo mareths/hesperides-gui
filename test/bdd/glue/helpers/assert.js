@@ -61,8 +61,9 @@ exports.fileContains = async function (filePath, content) {
 };
 
 exports.checkElementDisplayed = async function (elem) {
-    const elements = get.elementsByCss(elem);
-    // console.log('elements : ', elements);
-    console.log('element.isdisplayed : ', elements.isDisplayed);
-    await expect(elements.isDisplayed()).to.eventually.equal(true);
+    await expect(get.elementByCss(elem).isDisplayed()).to.eventually.be.true;
+};
+
+exports.isPresentByCss = async function (selector) {
+    await expect(get.elementByCss(selector).isPresent()).to.eventually.be.true;
 };

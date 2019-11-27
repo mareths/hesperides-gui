@@ -1,6 +1,5 @@
 const assert = require('../../helpers/assert');
 const send = require('../../helpers/send');
-const get = require('../../helpers/get');
 
 When('I open the modal properties list component', /** @this CustomWorld */ async function () {
     await browser.get(`${ baseUrl }/#/properties/${ this.platformBuilder.applicationName }?platform=${ this.platformBuilder.platformName }`);
@@ -8,5 +7,5 @@ When('I open the modal properties list component', /** @this CustomWorld */ asyn
 });
 
 Then('the modal properties list component is successfull displayed', async function () {
-    await get.elementsByCss('md-dialog').then(assert.checkElementDisplayed);
+    await assert.checkElementDisplayed('md-dialog');
 });
