@@ -64,6 +64,18 @@ exports.checkElementDisplayed = async function (elem) {
     await expect(get.elementByCss(elem).isDisplayed()).to.eventually.be.true;
 };
 
-exports.isPresentByCss = async function (selector) {
-    await expect(get.elementByCss(selector).isPresent()).to.eventually.be.true;
+exports.checkElementNotDisplayed = async function (elem) {
+    await expect(get.elementByCss(elem).isDisplayed()).to.eventually.be.false;
+};
+
+// tester le filtre des propriétés avec une valeur finale vide
+// le template contient 3 proprétés dont 2 avec une valeur finale vide
+exports.itemsHasNotBlankFinalValues = function (items) {
+    expect(items.length).to.equal(2);
+};
+
+// tester le filtre des propriétés par nom de la propriété saisi dans le champ filter
+// le template contient 5 propriétés dont 3 qui contiennent la clé filtre
+exports.itemsFiltered = function (items) {
+    expect(items.length).to.equal(3);
 };

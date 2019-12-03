@@ -7,15 +7,14 @@
             <div flex="40" class="properties-filter">
                 <md-input-container class="filter-block">
                     <label class="filter-label-style">{{ 'properties.filter.byKey' | translate }}</label>
-                    <input type="text" class="filter-input-style" ng-trim="true" ng-model="propertiesKeyFilter"
+                    <input id="e2e-filter-properties-by-key" type="text" class="filter-input-style" ng-trim="true" ng-model="propertiesKeyFilter"
                         aria-label="{{ 'properties.filter.byKey' | translate }}" />
                 </md-input-container>
             </div>
-            <md-switch ng-model="onlyPropertiesWithBlankFinalValue" class="md-warn md-block"
+            <md-switch id="e2e-switch-only-properties-with-blank-final-values" ng-model="onlyPropertiesWithBlankFinalValue" class="md-warn md-block"
                 aria-label="{{'platform.properties.modal.columnHeaders.switch.message' | translate}}">
                 <span class="switch-label-style">{{'platform.properties.modal.columnHeaders.switch.message' | translate}}</span>
-            </md-switch>
-            
+            </md-switch>            
         </div>
     </md-toolbar>
     <md-dialog-content>        
@@ -54,7 +53,7 @@
                 <div flex="30" class="properties-values">
                     {{property.nbUsage}} {{property.modulesWhereUsed}}
                 </div>
-                <div flex="20"
+                <div flex="20" id="e2e-show-only-properties-with-blank-final-values"
                     ng-attr-class="{{isGlobalValuationIsDiffrentWithModuleValuation(property) && 'fa-colored' || 'fa-not-colored' }}"
                     class="properties-values">{{property.finalValue}}
                 </div>

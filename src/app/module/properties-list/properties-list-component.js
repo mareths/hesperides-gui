@@ -121,6 +121,7 @@ angular.module('hesperides.module.propertiesList', [ 'hesperides.localChanges', 
                             });
                         });
                     });
+                    console.log('properties : ', $scope.properties);
                 });
             }
 
